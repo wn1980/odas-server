@@ -17,4 +17,4 @@ RUN cd odas/build && make
 
 EXPOSE 9000 9001
 
-WORKDIR /root/odas/build
+WORKDIR /root/odas
