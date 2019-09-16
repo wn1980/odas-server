@@ -8,13 +8,6 @@ RUN apt-get install -y \
 	libconfig-dev \
 	libasound2-dev
 	
-WORKDIR /root
-
-RUN git clone https://github.com/introlab/odas
-
-RUN cd odas && mkdir build && cd build && cmake ../
-RUN cd odas/build && make
-
 EXPOSE 9000 9001
 
-WORKDIR /root/odas
+WORKDIR /root/workspace

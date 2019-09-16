@@ -12,14 +12,14 @@ services:
     image: wn1980/odas-server
     container_name: odas_server
     restart: unless-stopped
-    command: stdbuf -o L bin/odaslive -v -c config/odaslive/respeaker_4_mic_array.cfg
+    command: stdbuf -o L /root/workspace/odas/bin/odaslive -v -c /root/workspace/odas/config/odaslive/respeaker_4_mic_array.cfg
     privileged: true
     devices:
       - "/dev/snd:/dev/snd"
     volumes:
       - "/dev/snd:/dev/snd"
       - "./asoundrc.txt:/root/.asoundrc:rw"
-      - "./src:/root/src:rw"
+      - "./workspace:/root/workspace:rw"
       - "/etc/localtime:/etc/localtime:ro"
     ports:
       - "9000:9000"
